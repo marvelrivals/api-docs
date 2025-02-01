@@ -6,5 +6,6 @@ Capitals do not matter. (see below)
 ## All possible platform types:
 | Platform        |
 | ----------- |
-| Console |
+| PLAYSTATION |
+| XBOX |
 | PC |
