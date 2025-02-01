@@ -8,5 +8,3 @@ Capitals do not matter. (see below)
 | ----------- |
 | Console |
 | PC |
-
-See the full list of aliases [here](https://github.com/marvelrivals/api-docs/blob/main/types/heroes.json)
