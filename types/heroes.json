@@ -1,227 +1,262 @@
 [
     [
-      "adam",
-      "adamwarlock",
-      "warlock"
+        "1011",
+        "banner",
+        "bruce",
+        "brucebanner",
+        "hulk"
     ],
     [
-      "anthony",
-      "anthonystark",
-      "anthonytonystark",
-      "ironman",
-      "stark",
-      "tony",
-      "tonystark"
+        "1014",
+        "castle",
+        "frank",
+        "frankcastle",
+        "punisher",
+        "thepunisher"
     ],
     [
-      "banner",
-      "bruce",
-      "brucebanner",
-      "hulk"
+        "1015",
+        "munroe",
+        "ororo",
+        "ororomunroe",
+        "storm"
     ],
     [
-      "barnes",
-      "buckybarnes",
-      "jamesbarnes",
-      "jamesbuckybarnes",
-      "soldier",
-      "winter",
-      "wintersoldier"
+        "1016",
+        "loki",
+        "lokilaufeyson"
     ],
     [
-      "barton",
-      "clint",
-      "clintbarton",
-      "hawkeye"
+        "1018",
+        "doctorstrange",
+        "drstrange",
+        "stephen",
+        "stephenstrange",
+        "strange"
     ],
     [
-      "blackpanther",
-      "tchalla"
+        "1020",
+        "mantis",
+        "prayingmantis",
+        "preyingmantis"
     ],
     [
-      "blackwidow",
-      "natasha",
-      "natashatomanova",
-      "romanova"
+        "1021",
+        "barton",
+        "clint",
+        "clintbarton",
+        "hawkeye"
     ],
     [
-      "bowen",
-      "cloak",
-      "cloak&dagger",
-      "cloakanddagger",
-      "cloakdagger",
-      "dagger",
-      "johnson",
-      "tandy",
-      "tandybowen",
-      "tyrone",
-      "tyronejohnson",
-      "tyronejohnson&tandybowen",
-      "tyronejohnsonandtandybowen",
-      "tyronejohnsontandybowen"
+        "1022",
+        "captainamerica",
+        "cptamerica",
+        "rogers",
+        "steve",
+        "steven",
+        "stevenrogers",
+        "stevensteverogers",
+        "steverogers"
     ],
     [
-      "brock",
-      "eddie",
-      "eddiebrock",
-      "edward",
-      "edwardbrock",
-      "edwardeddiebrock",
-      "venom"
+        "1023",
+        "raccoon",
+        "rocket",
+        "rocketraccoon"
     ],
     [
-      "captainamerica",
-      "cptamerica",
-      "rogers",
-      "steve",
-      "steven",
-      "stevenrogers",
-      "stevensteverogers",
-      "steverogers"
+        "1024",
+        "hela"
     ],
     [
-      "castle",
-      "frank",
-      "frankcastle",
-      "punisher",
-      "thepunisher"
+        "1025",
+        "bowen",
+        "cloak",
+        "cloak&dagger",
+        "cloakanddagger",
+        "cloakdagger",
+        "dagger",
+        "johnson",
+        "tandy",
+        "tandybowen",
+        "tyrone",
+        "tyronejohnson",
+        "tyronejohnson&tandybowen",
+        "tyronejohnsonandtandybowen",
+        "tyronejohnsontandybowen"
     ],
     [
-      "doctorstrange",
-      "drstrange",
-      "stephen",
-      "stephenstrange",
-      "strange"
+        "1026",
+        "blackpanther",
+        "tchalla"
     ],
     [
-      "doreen",
-      "doreengreen",
-      "green",
-      "squirrel",
-      "squirrelgirl"
+        "1027",
+        "groot"
     ],
     [
-      "eisenhardt",
-      "magneto",
-      "max",
-      "maxeisenhardt"
+        "1029",
+        "illyana",
+        "illyanarasputin",
+        "magik",
+        "rasputin"
     ],
     [
-      "fantastic",
-      "misterfantastic",
-      "mrfantastic",
-      "reed",
-      "reedrichards",
-      "richards"
+        "1030",
+        "marc",
+        "marcspector",
+        "moonknight",
+        "spector"
     ],
     [
-      "groot"
+        "1031",
+        "hee",
+        "luna",
+        "lunasnow",
+        "seol",
+        "seolhee",
+        "snow"
     ],
     [
-      "hee",
-      "luna",
-      "lunasnow",
-      "seol",
-      "seolhee",
-      "snow"
+        "1032",
+        "doreen",
+        "doreengreen",
+        "green",
+        "squirrel",
+        "squirrelgirl"
     ],
     [
-      "hela"
+        "1033",
+        "blackwidow",
+        "natasha",
+        "natashatomanova",
+        "romanova"
     ],
     [
-      "howlett",
-      "james",
-      "jameshowlett",
-      "jamesloganhowlett",
-      "logan",
-      "loganhowlett",
-      "wolverine"
+        "1034",
+        "anthony",
+        "anthonystark",
+        "anthonytonystark",
+        "ironman",
+        "stark",
+        "tony",
+        "tonystark"
     ],
     [
-      "illyana",
-      "illyanarasputin",
-      "magik",
-      "rasputin"
+        "1035",
+        "brock",
+        "eddie",
+        "eddiebrock",
+        "edward",
+        "edwardbrock",
+        "edwardeddiebrock",
+        "venom"
     ],
     [
-      "invisiblewoman",
-      "susan",
-      "susanstorm"
+        "1036",
+        "parker",
+        "peter",
+        "peterparker",
+        "spider",
+        "spiderman"
     ],
     [
-      "ironfist",
-      "linlie"
+        "1037",
+        "eisenhardt",
+        "magneto",
+        "max",
+        "maxeisenhardt"
     ],
     [
-      "jeff",
-      "jefflandshark",
-      "jeffshark",
-      "jeffthelandshark",
-      "jefftheshark",
-      "shark"
+        "1038",
+        "maximoff",
+        "scarlet",
+        "scarletwitch",
+        "wanda",
+        "wandamaximoff",
+        "witch"
     ],
     [
-      "loki",
-      "lokilaufeyson"
+        "1039",
+        "odinson",
+        "thor",
+        "thorodinson"
     ],
     [
-      "mantis",
-      "prayingmantis",
-      "preyingmantis"
+        "1040",
+        "fantastic",
+        "misterfantastic",
+        "mrfantastic",
+        "reed",
+        "reedrichards",
+        "richards"
     ],
     [
-      "marc",
-      "marcspector",
-      "moonknight",
-      "spector"
+        "1041",
+        "barnes",
+        "buckybarnes",
+        "jamesbarnes",
+        "jamesbuckybarnes",
+        "soldier",
+        "winter",
+        "wintersoldier"
     ],
     [
-      "maximoff",
-      "scarlet",
-      "scarletwitch",
-      "wanda",
-      "wandamaximoff",
-      "witch"
+        "1042",
+        "peni",
+        "peniparker"
     ],
     [
-      "mckenzie",
-      "namor",
-      "namormckenzie"
+        "1043",
+        "peterquill",
+        "quill",
+        "starlord"
     ],
     [
-      "munroe",
-      "ororo",
-      "ororomunroe",
-      "storm"
+        "1045",
+        "mckenzie",
+        "namor",
+        "namormckenzie"
     ],
     [
-      "odinson",
-      "thor",
-      "thorodinson"
+        "1046",
+        "adam",
+        "adamwarlock",
+        "warlock"
     ],
     [
-      "parker",
-      "peter",
-      "peterparker",
-      "spider",
-      "spiderman"
+        "1047",
+        "jeff",
+        "jefflandshark",
+        "jeffshark",
+        "jeffthelandshark",
+        "jefftheshark",
+        "shark"
     ],
     [
-      "peni",
-      "peniparker"
+        "1048",
+        "psylocke",
+        "sai"
     ],
     [
-      "peterquill",
-      "quill",
-      "starlord"
+        "1049",
+        "howlett",
+        "james",
+        "jameshowlett",
+        "jamesloganhowlett",
+        "logan",
+        "loganhowlett",
+        "wolverine"
     ],
     [
-      "psylocke",
-      "sai"
+        "1050",
+        "invisiblewoman",
+        "susan",
+        "susanstorm"
     ],
     [
-      "raccoon",
-      "rocket",
-      "rocketraccoon"
+        "1052",
+        "ironfist",
+        "linlie"
     ]
 ]
