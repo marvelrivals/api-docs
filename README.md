@@ -1,5 +1,519 @@
-# api-docs
-API documentation for MRApi.org
+# Game API Documentation
+
+Welcome to the official API documentation for accessing various game-related data! This API provides endpoints to retrieve information on achievements, heroes, items, player stats, leaderboards, ranks, skins, and gift codes. Below is a detailed guide on each available endpoint.
+
+---
+
+## Table of Contents
+
+1. [Get All Acquirable Achievements](#1-get-all-acquirable-achievements)
+2. [Get All Existing Gift Codes](#2-get-all-existing-gift-codes)
+3. [Get All Heroes](#3-get-all-heroes)
+4. [Get Hero by Name](#4-get-hero-by-name)
+5. [Get Hero Statistics by Platform](#5-get-hero-statistics-by-platform)
+6. [Get All Existing Items](#6-get-all-existing-items)
+7. [Get Leaderboards](#7-get-leaderboards)
+8. [Get Player Info by ID](#8-get-player-info-by-id)
+9. [Get Player ID by Name](#9-get-player-id-by-name)
+10. [Get All Ranks](#10-get-all-ranks)
+11. [Get All Hero Skins](#11-get-all-hero-skins)
+12. [Get Skins for a Specific Hero](#12-get-skins-for-a-specific-hero)
+13. [Response Format](#response-format)
+14. [Authentication & Rate Limiting](#authentication--rate-limiting)
+
+---
+
+## 1. Get All Acquirable Achievements
+**Endpoint**:  
+`GET /api/achievements`
+
+**Description**:  
+Retrieves a list of all acquirable achievements in the game.
+
+**Response**:  
+A JSON array containing achievement details such as name, description, and rewards.
+
+---
+
+## 2. Get All Existing Gift Codes
+**Endpoint**:  
+`GET /api/codes`
+
+**Description**:  
+Fetches a list of all existing gift codes that can be redeemed in the game.
+
+**Response**:  
+A JSON array containing gift code details, including code value, expiry date, and applicable rewards.
+
+---
+
+## 3. Get All Heroes
+**Endpoint**:  
+`GET /api/heroes`
+
+**Description**:  
+Retrieves a list of all heroes with their complete details and statistics.
+
+**Response**:  
+A JSON array containing hero details such as name, stats, abilities, and more.
+
+---
+
+## 4. Get Hero by Name
+**Endpoint**:  
+`GET /api/hero/:name`
+
+**Description**:  
+Fetches detailed information about a specific hero by name.
+
+**Parameters**:  
+- `name` (Path Parameter): The name of the hero (e.g., `Iron_Man`).
+
+**Response**:  
+A JSON object containing detailed information about the hero, including stats, abilities, and skins.
+
+**Example**:  
+```plaintext
+GET /api/hero/Iron_Man
+```
+
+---
+
+## 5. Get Hero Statistics by Platform
+**Endpoint**:  
+`GET /api/hero-stats/:platform`
+
+**Description**:  
+Fetches hero statistics based on the platform (PC or Console).
+
+**Parameters**:  
+- `platform` (Path Parameter): The platform to get hero stats for (e.g., `pc`, `console`).
+
+**Response**:  
+A JSON object containing hero statistics for the specified platform.
+
+**Example**:  
+```plaintext
+GET /api/hero-stats/pc
+```
+
+---
+
+## 6. Get All Existing Items
+**Endpoint**:  
+`GET /api/items`
+
+**Description**:  
+Retrieves a list of all existing items in the game.
+
+**Response**:  
+A JSON array containing item details, such as name, type, effect, and rarity.
+
+---
+
+## 7. Get Leaderboards
+**Endpoint**:  
+`GET /api/leaderboards/[:hero]`
+
+**Description**:  
+Fetches global or hero-specific leaderboards.
+
+**Parameters**:  
+- `hero` (Optional Path Parameter): The name of a specific hero to fetch the leaderboard for (e.g., `captain-america`).
+
+**Response**:  
+A JSON object containing leaderboard data. If a hero name is provided, it returns the leaderboard for that hero.
+
+**Example**:  
+```plaintext
+GET /api/leaderboard/captain-america
+```
+
+---
+
+## 8. Get Player Info by ID
+**Endpoint**:  
+`GET /api/player/:id`
+
+**Description**:  
+Fetches detailed information about a player using their unique ID.
+
+**Parameters**:  
+- `id` (Path Parameter): The unique player ID (e.g., `1695483110`).
+
+**Response**:  
+A JSON object containing player details, such as stats, achievements, and rank.
+
+**Example**:  
+```plaintext
+GET /api/player/1695483110
+```
+
+---
+
+## 9. Get Player ID by Name
+**Endpoint**:  
+`GET /api/player-id/:name`
+
+**Description**:  
+Retrieves a player’s unique ID based on their username.
+
+**Parameters**:  
+- `name` (Path Parameter): The player's username (e.g., `Toxic`).
+
+**Response**:  
+A JSON object containing the player's unique ID.
+
+**Example**:  
+```plaintext
+GET /api/player-id/Toxic
+```
+
+---
+
+## 10. Get All Ranks
+**Endpoint**:  
+`GET /api/ranks`
+
+**Description**:  
+Fetches information about all available ranks and their player totals.
+
+**Response**:  
+A JSON array containing rank details, including rank name, total players, and associated rewards.
+
+---
+
+## 11. Get All Hero Skins
+**Endpoint**:  
+`GET /api/skins`
+
+**Description**:  
+Retrieves a list of all available hero skins and variations.
+
+**Response**:  
+A JSON array containing skin details such as skin name, type, and variations.
+
+---
+
+## 12. Get Skins for a Specific Hero
+**Endpoint**:  
+`GET /api/skins/:hero`
+
+**Description**:  
+Fetches all skins for a specific hero.
+
+**Parameters**:  
+- `hero` (Path Parameter): The name of the hero whose skins are requested (e.g., `iron_man`).
+
+**Response**:  
+A JSON array containing all skins for the specified hero.
+
+**Example**:  
+```plaintext
+GET /api/skins/iron_man
+```
+
+---
+
+## Response Format
+- All endpoints return data in **JSON** format.
+- Typical response objects contain arrays or objects with attributes like `name`, `description`, `id`, etc., depending on the endpoint.
+
+**Example Response for Hero by Name**:
+```json
+{
+  "id": "1034",
+  "name": "Iron Man",
+  "real_name": "Anthony \"tony\" Stark",
+  "transformations": [
+    {
+      "id": 0,
+      "icon": "https://mrapi.org/assets/characters/iron-man-headbig-0.png",
+      "name": "Iron Man",
+      "health": "250",
+      "movement_speed": "6 m/s"
+    }
+  ],
+  "en_name": "Iron Man",
+  "description": "Armed with superior intellect and a nanotech battlesuit of his own design, Tony Stark stands alongside gods as the Invincible Iron Man. His state of the art armor turns any battlefield into his personal playground, allowing him to steal the spotlight he so desperately desires.",
+  "slug": "iron-man",
+  "team": "[\"Avengers\"]",
+  "difficulty": "2",
+  "attack_type": "Projectile Heroes",
+  "role": "DUELIST",
+  "image_square": "https://mrapi.org/assets/characters/iron-man-square.png",
+  "image_transverse": "https://mrapi.org/assets/characters/iron-man-transverse.png",
+  "icon": "https://mrapi.org/assets/characters/iron-man-headbig.png",
+  "image": "https://mrapi.org/assets/characters/iron-man-portrait.png",
+  "logo_small": "https://mrapi.org/assets/characters/iron-man-logo.png",
+  "logo": "https://mrapi.org/assets/characters/iron-man-logo-small.png",
+  "skins": [
+    "1034001",
+    "1034100",
+    "1034501",
+    "1034800",
+    "1034300"
+  ],
+  "abilities": [
+    {
+      "id": 103411,
+      "icon": "https://mrapi.org/assets/abilities/103411.png",
+      "name": "Repulsor Blast",
+      "type": "Weapon",
+      "isCollab": false,
+      "description": "Fire nano pulse cannons forward.",
+      "additional_fields": {
+        "Key": "Left Click",
+        "Ammo": "100",
+        "Range": "5m spherical radius",
+        "Damage": "65",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Fire Rate": "1.39 rounds per second",
+        "Critical Hit": "No",
+        "Ammo Consumption": "16 damage per round",
+        "Projectile Speed": "80 m/s",
+        "Special Mechanic 1": "After firing the one-handed repulsor twice in a row, the next attack will fire two repulsors at once",
+        "Special Mechanic 2": "Repulsor Blast and Unibeam share the same ammo count",
+        "Spell Field Damage": "40",
+        "Two-handed Repulsors": " ",
+        "Spell Field Damage Falloff": "40% falloff at 5m"
+      },
+      "transformation_id": 0
+    },
+    {
+      "id": 103421,
+      "icon": "https://mrapi.org/assets/abilities/103421.png",
+      "name": "Unibeam",
+      "type": "Weapon",
+      "isCollab": false,
+      "description": "Fire a unibeam forward.",
+      "additional_fields": {
+        "Key": "Right Click",
+        "Ammo": "100",
+        "Damage": "120 damage per second",
+        "Casting": "Channeled",
+        "Beam Length": "25m",
+        "Critical Hit": "No",
+        "Ammo Consumption": "10/s",
+        "Special Mechanic": "Repulsor Blast and Unibeam share the same ammo count"
+      },
+      "transformation_id": 0
+    },
+    {
+      "id": 103431,
+      "icon": "https://mrapi.org/assets/abilities/103431.png",
+      "name": "Hyper-velocity",
+      "type": "Normal",
+      "isCollab": false,
+      "description": "Activate \u003COrange\u003EHyper-Velocity\u003C/\u003E state for swift forward flight.",
+      "additional_fields": {
+        "Key": "SHIFT",
+        "Energy Cost": "15/s",
+        "Maximum Energy": "120",
+        "Movement Boost": "100%",
+        "Energy Recovery Speed": "10/s"
+      },
+      "transformation_id": 0
+    },
+    {
+      "id": 103441,
+      "icon": "https://mrapi.org/assets/abilities/103441.png",
+      "name": "Micro-missile Barrage",
+      "type": "Normal",
+      "isCollab": false,
+      "description": "When \u003COrange\u003EHyper-Velocity\u003C/\u003E or \u003COrange\u003EArmor Overdrive\u003C/\u003E is used, Iron Man can launch a missile bombardment.",
+      "additional_fields": {
+        "Key": "F",
+        "Range": "2m spherical radius",
+        "Casting": "Scatter-type projectile that generates a spell area upon impact",
+        "Cooldown": "8s",
+        "Missiles": "16",
+        "Projectile Speed": "15 m/s",
+        "Special Mechanic": "Launch missiles directly beneath Iron Man",
+        "Spell Field Damage": "20 damage per round"
+      },
+      "transformation_id": 0
+    },
+    {
+      "id": 103451,
+      "icon": "https://mrapi.org/assets/abilities/103451.png",
+      "name": "Armor Overdrive",
+      "type": "Normal",
+      "isCollab": false,
+      "description": "Activate \u003COrange\u003EArmor Overdrive\u003C/\u003E state, enhancing damage of \u003COrange\u003ERepulsor Blast\u003C/\u003E and \u003COrange\u003EUnibeam\u003C/\u003E.",
+      "additional_fields": {
+        "Key": "E",
+        "Cooldown": "20s",
+        "Duration": "10s"
+      },
+      "transformation_id": 0
+    },
+    {
+      "id": 103461,
+      "icon": "https://mrapi.org/assets/abilities/103461.png",
+      "name": "Invincible Pulse Cannon",
+      "type": "Ultimate",
+      "isCollab": false,
+      "description": "Fire a devastating pulse cannon in the targeted direction, delivering catastrophic damage to the targeted area upon impact.",
+      "additional_fields": {
+        "Key": "Q",
+        "Casting": "Straight-line projectile that generates a spell field upon impact",
+        "Energy Cost": "2800",
+        "Explosion Range": "10m spherical radius",
+        "Damage Over Time": "300/s",
+        "Explosion Damage": "1000",
+        "Projectile Speed": "25 m/s",
+        "Special Mechanic": "As the projectile travels, it creates a dispersive spell field that deals Damage Over Time to nearby enemies",
+        "Dispersive Spell Field": "Length: 15m, Width: 5m, Height: 5m",
+        "Spell Field Damage Falloff": "5% falloff at 10m"
+      },
+      "transformation_id": 0
+    },
+    {
+      "id": 103454,
+      "icon": "https://mrapi.org/assets/abilities/103454.png",
+      "type": "Normal",
+      "isCollab": true,
+      "additional_fields": {
+        "Health": "250",
+        "Movement Mode": "Flight",
+        "Movement Speed": "6 m/s"
+      },
+      "transformation_id": 0
+    }
+  ],
+  "meta": [
+    {
+      "platform": "pc",
+      "mode": "quickplay",
+      "rank": "all",
+      "appearance_rate": "7.69",
+      "win_rate": "49.06"
+    },
+    {
+      "platform": "pc",
+      "mode": "competitive",
+      "rank": "all",
+      "appearance_rate": "5.92",
+      "win_rate": "49.38"
+    },
+    {
+      "platform": "pc",
+      "mode": "competitive",
+      "rank": "bronze",
+      "appearance_rate": "6.62",
+      "win_rate": "48.04"
+    },
+    {
+      "platform": "pc",
+      "mode": "competitive",
+      "rank": "diamond",
+      "appearance_rate": "6.08",
+      "win_rate": "52.81"
+    },
+    {
+      "platform": "pc",
+      "mode": "competitive",
+      "rank": "gold",
+      "appearance_rate": "5.26",
+      "win_rate": "50.38"
+    },
+    {
+      "platform": "pc",
+      "mode": "competitive",
+      "rank": "grandmaster and above",
+      "appearance_rate": "6.69",
+      "win_rate": "52.70"
+    },
+    {
+      "platform": "pc",
+      "mode": "competitive",
+      "rank": "platinum",
+      "appearance_rate": "5.16",
+      "win_rate": "51.51"
+    },
+    {
+      "platform": "pc",
+      "mode": "competitive",
+      "rank": "silver",
+      "appearance_rate": "5.68",
+      "win_rate": "49.29"
+    },
+    {
+      "platform": "console",
+      "mode": "quickplay",
+      "rank": "all",
+      "appearance_rate": "7.69",
+      "win_rate": "49.06"
+    },
+    {
+      "platform": "console",
+      "mode": "competitive",
+      "rank": "all",
+      "appearance_rate": "7.19",
+      "win_rate": "49.25"
+    },
+    {
+      "platform": "console",
+      "mode": "competitive",
+      "rank": "bronze",
+      "appearance_rate": "8.05",
+      "win_rate": "48.29"
+    },
+    {
+      "platform": "console",
+      "mode": "competitive",
+      "rank": "diamond",
+      "appearance_rate": "6.30",
+      "win_rate": "52.63"
+    },
+    {
+      "platform": "console",
+      "mode": "competitive",
+      "rank": "gold",
+      "appearance_rate": "6.46",
+      "win_rate": "49.79"
+    },
+    {
+      "platform": "console",
+      "mode": "competitive",
+      "rank": "grandmaster and above",
+      "appearance_rate": "6.38",
+      "win_rate": "53.56"
+    },
+    {
+      "platform": "console",
+      "mode": "competitive",
+      "rank": "platinum",
+      "appearance_rate": "6.12",
+      "win_rate": "51.13"
+    },
+    {
+      "platform": "console",
+      "mode": "competitive",
+      "rank": "silver",
+      "appearance_rate": "7.20",
+      "win_rate": "48.95"
+    }
+  ]
+}
+```
+
+---
+
+## Authentication & Rate Limiting
+- **Authentication**: This API does not require authentication.
+- **Rate Limiting**: Be mindful of any rate limiting imposed by the server. To avoid making too many requests in a short time, refer to the API’s rate limits and ensure your requests are spaced out appropriately.
+
+---
+
+## License
+
+This API is made available under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+Feel free to submit any issues or suggestions via the [Issues page](https://github.com/your-repository/issues). Happy gaming! 🎮
 
 
 ## DISCLAIMER:
