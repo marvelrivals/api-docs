@@ -1,8 +1,6 @@
-# Game API Documentation
+# MR(API) Documentation
 
-Welcome to the official API documentation for accessing various game-related data! This API provides endpoints to retrieve information on achievements, heroes, items, player stats, leaderboards, ranks, skins, and gift codes. Below is a detailed guide on each available endpoint.
-
----
+Welcome to the official MR(API) documentation for accessing Marvel Rivals Player Data, Game Data, and Hero Data! 
 
 ## Table of Contents
 
@@ -513,7 +511,7 @@ This API is made available under the **MIT License**. See [LICENSE](LICENSE) for
 
 ---
 
-Feel free to submit any issues or suggestions via the [Issues page](https://github.com/your-repository/issues). Happy gaming! 🎮
+Feel free to submit any issues or suggestions via the [Issues page](https://github.com/marvelrivals/issues).
 
 
 ## DISCLAIMER:
