@@ -10,14 +10,19 @@ Welcome to the official MR(API) documentation for accessing Marvel Rivals Player
 4. [Get Hero by Name](#4-get-hero-by-name)
 5. [Get Hero Statistics by Platform](#5-get-hero-statistics-by-platform)
 6. [Get All Existing Items](#6-get-all-existing-items)
-7. [Get Leaderboards](#7-get-leaderboards)
-8. [Get Player Info by ID](#8-get-player-info-by-id)
-9. [Get Player ID by Name](#9-get-player-id-by-name)
-10. [Get All Ranks](#10-get-all-ranks)
-11. [Get All Hero Skins](#11-get-all-hero-skins)
-12. [Get Skins for a Specific Hero](#12-get-skins-for-a-specific-hero)
-13. [Response Format](#response-format)
-14. [Authentication & Rate Limiting](#authentication--rate-limiting)
+7. [Get Item by ID](#7-get-item-by-id)
+8. [Get Leaderboards](#8-get-leaderboards)
+9. [Get List of All Maps](#9-get-list-of-all-maps)
+10. [Get Match by ID.](#10-get-a-match-by-its-id)
+11. [Get Player Info by ID](#11-get-list-of-all-maps)
+12. [Get Player ID by Name](#12-get-player-id-by-name)
+13. [Get Player Matches](#13-get-player-matches)
+14. [Update a Player](#14-update-a-player)
+15. [Get All Ranks](#15-get-all-ranks)
+16. [Get All Hero Skins](#16-get-all-hero-skins)
+17. [Get Skins for a Specific Hero](#17-get-skins-for-a-specific-hero)
+18. [Response Format](#response-format)
+19. [Authentication & Rate Limiting](#authentication--rate-limiting)
 
 ---
 
@@ -79,7 +84,7 @@ GET /api/hero/Iron_Man
 
 ## 5. Get Hero Statistics by Platform
 **Endpoint**:  
-`GET /api/hero-stats/:platform`
+`GET /api/heroes-stats/:platform`
 
 **Description**:  
 Fetches hero statistics based on the platform (PC or Console).
@@ -92,7 +97,7 @@ A JSON object containing hero statistics for the specified platform.
 
 **Example**:  
 ```plaintext
-GET /api/hero-stats/pc
+GET /api/heroes-stats/pc
 ```
 
 ---
@@ -109,7 +114,23 @@ A JSON array containing item details, such as name, type, effect, and rarity.
 
 ---
 
-## 7. Get Leaderboards
+## 7. Get Item by ID
+
+**Endpoint**:
+`GET /api/item/:id`
+
+**Description**:  
+Retrieves an existing item in the game.
+
+**Parameters**:  
+- `id` (Path Parameter): The unique item ID (e.g., `30000001`).
+
+**Response**:  
+A JSON object containing item details, such as name, type, effect, and rarity.
+
+---
+
+## 8. Get Leaderboards
 **Endpoint**:  
 `GET /api/leaderboards/[:hero]`
 
@@ -129,7 +150,41 @@ GET /api/leaderboard/captain-america
 
 ---
 
-## 8. Get Player Info by ID
+## 9. Get List of All Maps
+**Endpoint**:
+`GET /api/maps`
+
+**Description**:
+Retrieves a list of all the maps in the game.
+
+**Response**:
+A JSON array containing map details, such as name, description, and gamemode.
+
+**Example**:
+```plaintext
+GET /api/maps
+```
+
+---
+
+## 10. Get a Match by it's ID.
+**Endpoint**:
+`GET /api/match/:id`
+
+**Description**:
+Get a match by it's id.
+
+**Response**:
+A JSON object containing the MVP, SVP, gamemode, and players with their statistics.
+
+**Example**:
+```plaintext
+GET /api/match/6711732_1738013791_802_11001_50
+```
+
+---
+
+## 11. Get Player Info by ID
 **Endpoint**:  
 `GET /api/player/:id`
 
@@ -149,7 +204,7 @@ GET /api/player/1695483110
 
 ---
 
-## 9. Get Player ID by Name
+## 12. Get Player ID by Name
 **Endpoint**:  
 `GET /api/player-id/:name`
 
@@ -169,7 +224,50 @@ GET /api/player-id/Toxic
 
 ---
 
-## 10. Get All Ranks
+## 13. Get Player Matches
+
+**Endpoint**:
+`GET /api/player-match/:id`
+
+**Description**:
+Gets all the player's previous matches.
+
+**Parameters**:  
+- `id` (Path Parameter): The unique player ID (e.g., `1695483110`).
+- `page` : Use this to see more matches
+
+**Response**:
+A JSON array containing the match UID, gamemode, player's statistics, and score.
+
+**Example**
+```plaintext
+GET api/player-match/1695483110?page=2
+```
+
+---
+
+## 14. Update a Player
+**Endpoint**:
+`GET /api/player-update/:id`
+
+**Description**:
+Fetches the latest changes for a specific player.
+
+**Parameters**:  
+- `id` (Path Parameter): The unique player ID (e.g., `1695483110`).
+
+**Response**:
+A JSON object containing if the operation was successful.
+
+**Example**:
+```plaintext
+GET /api/player-update/1695483110
+```
+
+---
+
+
+## 15. Get All Ranks
 **Endpoint**:  
 `GET /api/ranks`
 
@@ -181,7 +279,7 @@ A JSON array containing rank details, including rank name, total players, and as
 
 ---
 
-## 11. Get All Hero Skins
+## 16. Get All Hero Skins
 **Endpoint**:  
 `GET /api/skins`
 
@@ -193,7 +291,7 @@ A JSON array containing skin details such as skin name, type, and variations.
 
 ---
 
-## 12. Get Skins for a Specific Hero
+## 17. Get Skins for a Specific Hero
 **Endpoint**:  
 `GET /api/skins/:hero`
 
