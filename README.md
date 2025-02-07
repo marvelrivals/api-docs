@@ -174,6 +174,9 @@ GET /api/maps
 **Description**:
 Get a match by it's id.
 
+**Parameters**:  
+- `id` (Path Parameter): The unique match ID (e.g., `6711732_1738013791_802_11001_50`).
+
 **Response**:
 A JSON object containing the MVP, SVP, gamemode, and players with their statistics.
 
