@@ -115,7 +115,7 @@ GET /api/hero/Iron_Man?filter=real_name,description
 Fetches hero statistics based on the platform (PC or Console).
 
 **Parameters**:  
-- `platform` (Path Parameter): The platform to get hero stats for (e.g., `pc`, `console`).
+- [`platform`](types\platforms.md) (Path Parameter): The platform to get hero stats for.
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
@@ -180,13 +180,19 @@ Fetches global or hero-specific leaderboards.
 **Parameters**:  
 - `hero` (Optional Path Parameter): The name of a specific hero to fetch the leaderboard for (e.g., `captain-america`).
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+- [`platform`](types\platforms.md) (Query Parameter): The platform to get hero stats for.
 
 **Response**:  
 A JSON object containing leaderboard data. If a hero name is provided, it returns the leaderboard for that hero.
 
-**Example**:  
+**Hero Leaderboard Example**:  
 ```plaintext
-GET /api/leaderboard/captain-america?filter=rank,score,player_id
+GET /api/leaderboard/captain-america?filter=rank,score,player_id&platform=xbox
+```
+
+**Global Leaderboard Example**
+```plaintext 
+GET /api/leaderboard?filter=rank,score,player_id&platform=playstation
 ```
 
 ---
