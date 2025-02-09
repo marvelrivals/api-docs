@@ -39,6 +39,11 @@ Retrieves a list of all acquirable achievements in the game.
 **Response**:  
 A JSON array containing achievement details such as name, description, and rewards.
 
+**Example**: 
+```plaintext
+GET /api/achievements?filter=name,points
+```
+
 ---
 
 ## 2. Get All Existing Gift Codes
@@ -54,6 +59,11 @@ Fetches a list of all existing gift codes that can be redeemed in the game.
 **Response**:  
 A JSON array containing gift code details, including code value, expiry date, and applicable rewards.
 
+**Example**:  
+```plaintext
+GET /api/codes?filter=code
+```
+
 ---
 
 ## 3. Get All Heroes
@@ -68,6 +78,11 @@ Retrieves a list of all heroes with their complete details and statistics.
 
 **Response**:  
 A JSON array containing hero details such as name, stats, abilities, and more.
+
+**Example**:  
+```plaintext
+GET /api/heroes?filter=real_name,description
+```
 
 ---
 
@@ -87,7 +102,7 @@ A JSON object containing detailed information about the hero, including stats, a
 
 **Example**:  
 ```plaintext
-GET /api/hero/Iron_Man
+GET /api/hero/Iron_Man?filter=real_name,description
 ```
 
 ---
@@ -106,9 +121,9 @@ Fetches hero statistics based on the platform (PC or Console).
 **Response**:  
 A JSON object containing hero statistics for the specified platform.
 
-**Example**:  
+**Example**:
 ```plaintext
-GET /api/heroes-stats/pc
+GET /api/heroes-stats/pc?filter=quickPlay.name,quickPlay.winRate,quickPlay.pickRate
 ```
 
 ---
@@ -126,6 +141,11 @@ Retrieves a list of all existing items in the game.
 **Response**:  
 A JSON array containing item details, such as name, type, effect, and rarity.
 
+**Example**:  
+```plaintext
+GET /api/items?filter=quality,type
+```
+
 ---
 
 ## 7. Get Item by ID
@@ -142,6 +162,11 @@ Retrieves an existing item in the game.
 
 **Response**:  
 A JSON object containing item details, such as name, type, effect, and rarity.
+
+**Example**:  
+```plaintext
+GET /api/item/30000001?filter=quality,type
+```
 
 ---
 
@@ -161,7 +186,7 @@ A JSON object containing leaderboard data. If a hero name is provided, it return
 
 **Example**:  
 ```plaintext
-GET /api/leaderboard/captain-america
+GET /api/leaderboard/captain-america?filter=rank,score,player_id
 ```
 
 ---
@@ -181,7 +206,7 @@ A JSON array containing map details, such as name, description, and gamemode.
 
 **Example**:
 ```plaintext
-GET /api/maps
+GET /api/maps?filter=name,gamemode
 ```
 
 ---
@@ -202,7 +227,7 @@ A JSON object containing the MVP, SVP, gamemode, and players with their statisti
 
 **Example**:
 ```plaintext
-GET /api/match/6711732_1738013791_802_11001_50
+GET /api/match/6711732_1738013791_802_11001_50?filter=replay_id,mvp,svp
 ```
 
 ---
@@ -223,7 +248,7 @@ A JSON object containing player details, such as stats, achievements, and rank.
 
 **Example**:  
 ```plaintext
-GET /api/player/1695483110
+GET /api/player/1695483110?filter=player_name,player_uid,stats
 ```
 
 ---
@@ -244,7 +269,7 @@ A JSON object containing the player's unique ID.
 
 **Example**:  
 ```plaintext
-GET /api/player-id/Toxic
+GET /api/player-id/Toxic?filter=id
 ```
 
 ---
@@ -267,7 +292,7 @@ A JSON array containing the match UID, gamemode, player's statistics, and score.
 
 **Example**
 ```plaintext
-GET api/player-match/1695483110?page=2
+GET api/player-match/1695483110?page=2&filter=match_uid,match_timestamp
 ```
 
 ---
@@ -288,7 +313,7 @@ A JSON object containing if the operation was successful.
 
 **Example**:
 ```plaintext
-GET /api/player-update/1695483110
+GET /api/player-update/1695483110?filter=success
 ```
 
 ---
@@ -307,6 +332,11 @@ Fetches information about all available ranks and their player totals.
 **Response**:  
 A JSON array containing rank details, including rank name, total players, and associated rewards.
 
+**Example**:  
+```plaintext
+GET /api/ranks?filter=celestial.3
+```
+
 ---
 
 ## 16. Get All Hero Skins
@@ -321,6 +351,11 @@ Retrieves a list of all available hero skins and variations.
 
 **Response**:  
 A JSON array containing skin details such as skin name, type, and variations.
+
+**Example**:  
+```plaintext
+GET /api/skins?filter=name,quality
+```
 
 ---
 
@@ -340,7 +375,7 @@ A JSON array containing all skins for the specified hero.
 
 **Example**:  
 ```plaintext
-GET /api/skins/iron_man
+GET /api/skins/iron_man?filter=name,quality
 ```
 
 ---
