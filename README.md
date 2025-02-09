@@ -33,8 +33,16 @@ Welcome to the official MR(API) documentation for accessing Marvel Rivals Player
 **Description**:  
 Retrieves a list of all acquirable achievements in the game.
 
+**Parameters**:
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+
 **Response**:  
 A JSON array containing achievement details such as name, description, and rewards.
+
+**Example**: 
+```plaintext
+GET /api/achievements?filter=name,points
+```
 
 ---
 
@@ -45,8 +53,16 @@ A JSON array containing achievement details such as name, description, and rewar
 **Description**:  
 Fetches a list of all existing gift codes that can be redeemed in the game.
 
+**Parameters**:
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+
 **Response**:  
 A JSON array containing gift code details, including code value, expiry date, and applicable rewards.
+
+**Example**:  
+```plaintext
+GET /api/codes?filter=code
+```
 
 ---
 
@@ -57,8 +73,16 @@ A JSON array containing gift code details, including code value, expiry date, an
 **Description**:  
 Retrieves a list of all heroes with their complete details and statistics.
 
+**Parameters**:
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+
 **Response**:  
 A JSON array containing hero details such as name, stats, abilities, and more.
+
+**Example**:  
+```plaintext
+GET /api/heroes?filter=real_name,description
+```
 
 ---
 
@@ -71,13 +95,14 @@ Fetches detailed information about a specific hero by name.
 
 **Parameters**:  
 - `name` (Path Parameter): The name of the hero (e.g., `Iron_Man`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
 A JSON object containing detailed information about the hero, including stats, abilities, and skins.
 
 **Example**:  
 ```plaintext
-GET /api/hero/Iron_Man
+GET /api/hero/Iron_Man?filter=real_name,description
 ```
 
 ---
@@ -91,13 +116,14 @@ Fetches hero statistics based on the platform (PC or Console).
 
 **Parameters**:  
 - `platform` (Path Parameter): The platform to get hero stats for (e.g., `pc`, `console`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
 A JSON object containing hero statistics for the specified platform.
 
-**Example**:  
+**Example**:
 ```plaintext
-GET /api/heroes-stats/pc
+GET /api/heroes-stats/pc?filter=quickPlay.name,quickPlay.winRate,quickPlay.pickRate
 ```
 
 ---
@@ -109,8 +135,16 @@ GET /api/heroes-stats/pc
 **Description**:  
 Retrieves a list of all existing items in the game.
 
+**Parameters**:
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+
 **Response**:  
 A JSON array containing item details, such as name, type, effect, and rarity.
+
+**Example**:  
+```plaintext
+GET /api/items?filter=quality,type
+```
 
 ---
 
@@ -124,9 +158,15 @@ Retrieves an existing item in the game.
 
 **Parameters**:  
 - `id` (Path Parameter): The unique item ID (e.g., `30000001`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
 A JSON object containing item details, such as name, type, effect, and rarity.
+
+**Example**:  
+```plaintext
+GET /api/item/30000001?filter=quality,type
+```
 
 ---
 
@@ -139,13 +179,14 @@ Fetches global or hero-specific leaderboards.
 
 **Parameters**:  
 - `hero` (Optional Path Parameter): The name of a specific hero to fetch the leaderboard for (e.g., `captain-america`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
 A JSON object containing leaderboard data. If a hero name is provided, it returns the leaderboard for that hero.
 
 **Example**:  
 ```plaintext
-GET /api/leaderboard/captain-america
+GET /api/leaderboard/captain-america?filter=rank,score,player_id
 ```
 
 ---
@@ -157,12 +198,15 @@ GET /api/leaderboard/captain-america
 **Description**:
 Retrieves a list of all the maps in the game.
 
+**Parameters**:
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+
 **Response**:
 A JSON array containing map details, such as name, description, and gamemode.
 
 **Example**:
 ```plaintext
-GET /api/maps
+GET /api/maps?filter=name,gamemode
 ```
 
 ---
@@ -176,13 +220,14 @@ Get a match by it's id.
 
 **Parameters**:  
 - `id` (Path Parameter): The unique match ID (e.g., `6711732_1738013791_802_11001_50`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:
 A JSON object containing the MVP, SVP, gamemode, and players with their statistics.
 
 **Example**:
 ```plaintext
-GET /api/match/6711732_1738013791_802_11001_50
+GET /api/match/6711732_1738013791_802_11001_50?filter=replay_id,mvp,svp
 ```
 
 ---
@@ -196,13 +241,14 @@ Fetches detailed information about a player using their unique ID.
 
 **Parameters**:  
 - `id` (Path Parameter): The unique player ID (e.g., `1695483110`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
 A JSON object containing player details, such as stats, achievements, and rank.
 
 **Example**:  
 ```plaintext
-GET /api/player/1695483110
+GET /api/player/1695483110?filter=player_name,player_uid,stats
 ```
 
 ---
@@ -216,13 +262,14 @@ Retrieves a player’s unique ID based on their username.
 
 **Parameters**:  
 - `name` (Path Parameter): The player's username (e.g., `Toxic`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
 A JSON object containing the player's unique ID.
 
 **Example**:  
 ```plaintext
-GET /api/player-id/Toxic
+GET /api/player-id/Toxic?filter=id
 ```
 
 ---
@@ -237,14 +284,15 @@ Gets all the player's previous matches.
 
 **Parameters**:  
 - `id` (Path Parameter): The unique player ID (e.g., `1695483110`).
-- `page` : Use this to see more matches
+- `page` (Query Parameter): Use this to see more matches
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:
 A JSON array containing the match UID, gamemode, player's statistics, and score.
 
 **Example**
 ```plaintext
-GET api/player-match/1695483110?page=2
+GET api/player-match/1695483110?page=2&filter=match_uid,match_timestamp
 ```
 
 ---
@@ -258,13 +306,14 @@ Fetches the latest changes for a specific player.
 
 **Parameters**:  
 - `id` (Path Parameter): The unique player ID (e.g., `1695483110`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:
 A JSON object containing if the operation was successful.
 
 **Example**:
 ```plaintext
-GET /api/player-update/1695483110
+GET /api/player-update/1695483110?filter=success
 ```
 
 ---
@@ -277,8 +326,16 @@ GET /api/player-update/1695483110
 **Description**:  
 Fetches information about all available ranks and their player totals.
 
+**Parameters**:
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+
 **Response**:  
 A JSON array containing rank details, including rank name, total players, and associated rewards.
+
+**Example**:  
+```plaintext
+GET /api/ranks?filter=celestial.3
+```
 
 ---
 
@@ -289,8 +346,16 @@ A JSON array containing rank details, including rank name, total players, and as
 **Description**:  
 Retrieves a list of all available hero skins and variations.
 
+**Parameters**:
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
+
 **Response**:  
 A JSON array containing skin details such as skin name, type, and variations.
+
+**Example**:  
+```plaintext
+GET /api/skins?filter=name,quality
+```
 
 ---
 
@@ -303,13 +368,14 @@ Fetches all skins for a specific hero.
 
 **Parameters**:  
 - `hero` (Path Parameter): The name of the hero whose skins are requested (e.g., `iron_man`).
+- `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
 A JSON array containing all skins for the specified hero.
 
 **Example**:  
 ```plaintext
-GET /api/skins/iron_man
+GET /api/skins/iron_man?filter=name,quality
 ```
 
 ---
