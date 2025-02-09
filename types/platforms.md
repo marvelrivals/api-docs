@@ -1,11 +1,14 @@
-# Heroes
-This type is used when filling in the API data for the platform parameter of an endpoint.
-
-Capitals do not matter. (see below)
+ 
+> Capitalization does **NOT** matter.
 
 ## All possible platform types:
 | Platform        |
 | ----------- |
-| PLAYSTATION |
+| PLAYSTATION / PS |
 | XBOX |
-| PC |
+| CONSOLE |
+| PC / COMPUTER |
+
+> Console gets both Playstation and Xbox.
+
+
