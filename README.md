@@ -14,7 +14,7 @@ Welcome to the official MR(API) documentation for accessing Marvel Rivals Player
 8. [Get Leaderboards](#8-get-leaderboards)
 9. [Get List of All Maps](#9-get-list-of-all-maps)
 10. [Get Match by ID.](#10-get-a-match-by-its-id)
-11. [Get Player Info by ID](#11-get-list-of-all-maps)
+11. [Get Player Info by ID](#11-get-player-info-by-id)
 12. [Get Player ID by Name](#12-get-player-id-by-name)
 13. [Get Player Matches](#13-get-player-matches)
 14. [Update a Player](#14-update-a-player)
