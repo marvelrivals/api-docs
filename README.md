@@ -1,29 +1,33 @@
 # MR(API) Documentation
 
-Welcome to the official MR(API) documentation for accessing Marvel Rivals Player Data, Game Data, and Hero Data! 
+Welcome to the official MR(API) by LunarAPI documentation for accessing Marvel Rivals Player Data, Game Data, and Hero Data!
 
 ## Table of Contents
 
-1. [Get All Acquirable Achievements](#1-get-all-acquirable-achievements)
-2. [Get All Existing Gift Codes](#2-get-all-existing-gift-codes)
-3. [Get All Heroes](#3-get-all-heroes)
-4. [Get Hero by Name](#4-get-hero-by-name)
-5. [Get Hero Statistics by Platform](#5-get-hero-statistics-by-platform)
-6. [Get All Existing Items](#6-get-all-existing-items)
-7. [Get Item by ID](#7-get-item-by-id)
-8. [Get Leaderboards](#8-get-leaderboards)
-9. [Get List of All Maps](#9-get-list-of-all-maps)
-10. [Get Match by ID.](#10-get-a-match-by-its-id)
-11. [Get Player Info by ID](#11-get-player-info-by-id)
-12. [Get Player ID by Name](#12-get-player-id-by-name)
-13. [Get Player Matches](#13-get-player-matches)
-14. [Update a Player](#14-update-a-player)
-15. [Get All Ranks](#15-get-all-ranks)
-16. [Get All Hero Skins](#16-get-all-hero-skins)
-17. [Get Skins for a Specific Hero](#17-get-skins-for-a-specific-hero)
-18. [Response Format](#response-format)
-19. [Authentication & Rate Limiting](#authentication--rate-limiting)
-
+- API
+  1. [Get All Acquirable Achievements](#1-get-all-acquirable-achievements)
+  2. [Get All Existing Gift Codes](#2-get-all-existing-gift-codes)
+  3. [Get All Heroes](#3-get-all-heroes)
+  4. [Get Hero by Name](#4-get-hero-by-name)
+  5. [Get Hero Statistics by Platform](#5-get-hero-statistics-by-platform)
+  6. [Get All Existing Items](#6-get-all-existing-items)
+  7. [Get Item by ID](#7-get-item-by-id)
+  8. [Get Leaderboards](#8-get-leaderboards)
+  9. [Get List of All Maps](#9-get-list-of-all-maps)
+  10. [Get Match by ID.](#10-get-a-match-by-its-id)
+  11. [Get Player Info by ID](#11-get-player-info-by-id)
+  12. [Get Player ID by Name](#12-get-player-id-by-name)
+  13. [Get Player Matches](#13-get-player-matches)
+  14. [Update a Player](#14-update-a-player)
+  15. [Get All Ranks](#15-get-all-ranks)
+  16. [Get All Hero Skins](#16-get-all-hero-skins)
+  17. [Get Skins for a Specific Hero](#17-get-skins-for-a-specific-hero)
+  18. [Get Battlepass Info](#18-get-battlepass-info)
+- [Response Format](#response-format)
+- [Authentication & Rate Limiting](#authentication--rate-limiting)
+- [License](#license)
+- [Help](#help)
+- [DISCLAIMER](#DISCLAIMER)
 ---
 
 ## 1. Get All Acquirable Achievements
@@ -88,13 +92,13 @@ GET /api/heroes?filter=real_name,description
 
 ## 4. Get Hero by Name
 **Endpoint**:  
-`GET /api/hero/:name`
+`GET /api/hero/:hero`
 
 **Description**:  
 Fetches detailed information about a specific hero by name.
 
 **Parameters**:  
-- `name` (Path Parameter): The name of the hero (e.g., `Iron_Man`).
+- [`hero`](types\heroes.md) (Path Parameter): The name of the hero (e.g., `Iron_Man`).
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
@@ -178,7 +182,7 @@ GET /api/item/30000001?filter=quality,type
 Fetches global or hero-specific leaderboards.
 
 **Parameters**:  
-- `hero` (Optional Path Parameter): The name of a specific hero to fetch the leaderboard for (e.g., `captain-america`).
+- [`hero`](types\heroes.md) (Optional Path Parameter): The name of a specific hero to fetch the leaderboard for (e.g., `captain-america`).
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 - [`platform`](types\platforms.md) (Query Parameter): The platform to get hero stats for.
 
@@ -304,11 +308,14 @@ GET api/player-match/1695483110?page=2&filter=match_uid,match_timestamp
 ---
 
 ## 14. Update a Player
+
 **Endpoint**:
 `GET /api/player-update/:id`
 
 **Description**:
 Fetches the latest changes for a specific player.
+
+> **NOTE**: This will take a few minutes to update.
 
 **Parameters**:  
 - `id` (Path Parameter): The unique player ID (e.g., `1695483110`).
@@ -321,6 +328,7 @@ A JSON object containing if the operation was successful.
 ```plaintext
 GET /api/player-update/1695483110?filter=success
 ```
+
 
 ---
 
@@ -373,7 +381,7 @@ GET /api/skins?filter=name,quality
 Fetches all skins for a specific hero.
 
 **Parameters**:  
-- `hero` (Path Parameter): The name of the hero whose skins are requested (e.g., `iron_man`).
+- [`hero`](types\heroes.md) (Path Parameter): The name of the hero whose skins are requested (e.g., `iron_man`).
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
@@ -386,11 +394,34 @@ GET /api/skins/iron_man?filter=name,quality
 
 ---
 
+## 18. Get Battlepass Info
+
+**Endpoint**:
+`GET /api/battlepass`
+
+**Description**:
+Fetches season's battlepass content
+
+**Parameters**:
+- `season` (Optional Query Parameter) Choose the season you want. (e.g. `0` or `1`) By default it will grab the latest season.
+
+**Response**:
+A JSON object containing the `start_time`, `end_time`, a JSON array with the pages and their contents.
+
+**Example**:
+```plaintext
+GET /api/battlepass?season=0
+```
+
+---
+
 ## Response Format
 - All endpoints return data in **JSON** format.
 - Typical response objects contain arrays or objects with attributes like `name`, `description`, `id`, etc., depending on the endpoint.
 
-**Example Response for Hero by Name**:
+<details>
+<summary><b>Example Response for Hero by Name:</b></summary>
+
 ```json
 {
   "id": "1034",
@@ -669,6 +700,7 @@ GET /api/skins/iron_man?filter=name,quality
   ]
 }
 ```
+</details>
 
 ---
 
@@ -686,6 +718,11 @@ This API is made available under the **MIT License**. See [LICENSE](LICENSE) for
 
 Feel free to submit any issues or suggestions via the [Issues page](https://github.com/marvelrivals/issues).
 
+## Help
 
-## DISCLAIMER:
+Please join our [Discord](https://discord.gg/3kSsWEZpft) for help! 
+
+
+## DISCLAIMER
 > This API is NOT official and NOT endorsed by Marvel Rivals in any way. All names, resources and generally any Marvel Rivals related content belongs to Marvel Rivals.
+
