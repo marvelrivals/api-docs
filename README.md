@@ -4,24 +4,24 @@ Welcome to the official MR(API) by LunarAPI documentation for accessing Marvel R
 
 ## Table of Contents
 - API
-  - [Get All Acquirable Achievements](#1-get-all-acquirable-achievements)
-  - [Get All Existing Gift Codes](#2-get-all-existing-gift-codes)
-  - [Get All Heroes](#3-get-all-heroes)
-  - [Get Hero by Name](#4-get-hero-by-name)
-  - [Get Hero Statistics by Platform](#5-get-hero-statistics-by-platform)
-  - [Get All Existing Items](#6-get-all-existing-items)
-  - [Get Item by ID](#7-get-item-by-id)
-  - [Get Leaderboards](#8-get-leaderboards)
-  - [Get List of All Maps](#9-get-list-of-all-maps)
-  - [Get Match by ID.](#10-get-a-match-by-its-id)
-  - [Get Player Info by ID](#11-get-player-info-by-id)
-  - [Get Player ID by Name](#12-get-player-id-by-name)
-  - [Get Player Matches](#13-get-player-matches)
-  - [Update a Player](#14-update-a-player)
-  - [Get All Ranks](#15-get-all-ranks)
-  - [Get All Hero Skins](#16-get-all-hero-skins)
-  - [Get Skins for a Specific Hero](#17-get-skins-for-a-specific-hero) 
-  - [Get Battlepass Info](#18-get-battlepass-info)
+  - [Get All Acquirable Achievements](#get-all-acquirable-achievements)
+  - [Get All Existing Gift Codes](#get-all-existing-gift-codes)
+  - [Get All Heroes](#get-all-heroes)
+  - [Get Hero by Name](#get-hero-by-name)
+  - [Get Hero Statistics by Platform](#get-hero-statistics-by-platform)
+  - [Get All Existing Items](#get-all-existing-items)
+  - [Get Item by ID](#get-item-by-id)
+  - [Get Leaderboards](#get-leaderboards)
+  - [Get List of All Maps](#get-list-of-all-maps)
+  - [Get Match by ID.](#get-a-match-by-its-id)
+  - [Get Player Info by ID](#get-player-info-by-id)
+  - [Get Player ID by Name](#get-player-id-by-name)
+  - [Get Player Matches](#get-player-matches)
+  - [Update a Player](#update-a-player)
+  - [Get All Ranks](#get-all-ranks)
+  - [Get All Hero Skins](#get-all-hero-skins)
+  - [Get Skins for a Specific Hero](#get-skins-for-a-specific-hero) 
+  - [Get Battlepass Info](#get-battlepass-info)
 - [Response Format](#response-format)
 - [Authentication & Rate Limiting](#authentication--rate-limiting)
 - [License](#license)
@@ -29,7 +29,7 @@ Welcome to the official MR(API) by LunarAPI documentation for accessing Marvel R
 - [DISCLAIMER](#DISCLAIMER)
 ---
 
-## 1. Get All Acquirable Achievements
+## Get All Acquirable Achievements
 **Endpoint**:  
 `GET /api/achievements`
 
@@ -49,7 +49,7 @@ GET /api/achievements?filter=name,points
 
 ---
 
-## 2. Get All Existing Gift Codes
+## Get All Existing Gift Codes
 **Endpoint**:  
 `GET /api/codes`
 
@@ -69,7 +69,7 @@ GET /api/codes?filter=code
 
 ---
 
-## 3. Get All Heroes
+## Get All Heroes
 **Endpoint**:  
 `GET /api/heroes`
 
@@ -89,7 +89,7 @@ GET /api/heroes?filter=real_name,description
 
 ---
 
-## 4. Get Hero by Name
+## Get Hero by Name
 **Endpoint**:  
 `GET /api/hero/:hero`
 
@@ -110,7 +110,7 @@ GET /api/hero/Iron_Man?filter=real_name,description
 
 ---
 
-## 5. Get Hero Statistics by Platform
+## Get Hero Statistics by Platform
 **Endpoint**:  
 `GET /api/heroes-stats/:platform`
 
@@ -131,7 +131,7 @@ GET /api/heroes-stats/pc?filter=quickPlay.name,quickPlay.winRate,quickPlay.pickR
 
 ---
 
-## 6. Get All Existing Items
+## Get All Existing Items
 **Endpoint**:  
 `GET /api/items`
 
@@ -151,7 +151,7 @@ GET /api/items?filter=quality,type
 
 ---
 
-## 7. Get Item by ID
+## Get Item by ID
 
 **Endpoint**:
 `GET /api/item/:id`
@@ -173,7 +173,7 @@ GET /api/item/30000001?filter=quality,type
 
 ---
 
-## 8. Get Leaderboards
+## Get Leaderboards
 **Endpoint**:  
 `GET /api/leaderboard/[:hero]`
 
@@ -200,7 +200,7 @@ GET /api/leaderboard?filter=rank,score,player_id&platform=playstation
 
 ---
 
-## 9. Get List of All Maps
+## Get List of All Maps
 **Endpoint**:
 `GET /api/maps`
 
@@ -220,7 +220,7 @@ GET /api/maps?filter=name,gamemode
 
 ---
 
-## 10. Get a Match by it's ID.
+## Get a Match by it's ID.
 **Endpoint**:
 `GET /api/match/:id`
 
@@ -241,7 +241,7 @@ GET /api/match/6711732_1738013791_802_11001_50?filter=replay_id,mvp,svp
 
 ---
 
-## 11. Get Player Info by ID
+## Get Player Info by ID
 **Endpoint**:  
 `GET /api/player/:id`
 
@@ -262,7 +262,7 @@ GET /api/player/1695483110?filter=player_name,player_uid,stats
 
 ---
 
-## 12. Get Player ID by Name
+## Get Player ID by Name
 **Endpoint**:  
 `GET /api/player-id/:name`
 
@@ -283,7 +283,7 @@ GET /api/player-id/Toxic?filter=id
 
 ---
 
-## 13. Get Player Matches
+## Get Player Matches
 
 **Endpoint**:
 `GET /api/player-match/:id`
@@ -306,7 +306,7 @@ GET api/player-match/1695483110?page=2&filter=match_uid,match_timestamp
 
 ---
 
-## 14. Update a Player
+## Update a Player
 
 **Endpoint**:
 `GET /api/player-update/:id`
@@ -332,7 +332,7 @@ GET /api/player-update/1695483110?filter=success
 ---
 
 
-## 15. Get All Ranks
+## Get All Ranks
 **Endpoint**:  
 `GET /api/ranks`
 
@@ -352,7 +352,7 @@ GET /api/ranks?filter=celestial.3
 
 ---
 
-## 16. Get All Hero Skins
+## Get All Hero Skins
 **Endpoint**:  
 `GET /api/skins`
 
@@ -372,7 +372,7 @@ GET /api/skins?filter=name,quality
 
 ---
 
-## 17. Get Skins for a Specific Hero
+## Get Skins for a Specific Hero
 **Endpoint**:  
 `GET /api/skin/:hero`
 
@@ -393,7 +393,7 @@ GET /api/skin/iron_man?filter=name,quality
 
 ---
 
-## 18. Get Battlepass Info
+## Get Battlepass Info
 
 **Endpoint**:
 `GET /api/battlepass`
