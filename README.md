@@ -176,7 +176,7 @@ GET /api/item/30000001?filter=quality,type
 
 ## 8. Get Leaderboards
 **Endpoint**:  
-`GET /api/leaderboards/[:hero]`
+`GET /api/leaderboard/[:hero]`
 
 **Description**:  
 Fetches global or hero-specific leaderboards.
@@ -375,7 +375,7 @@ GET /api/skins?filter=name,quality
 
 ## 17. Get Skins for a Specific Hero
 **Endpoint**:  
-`GET /api/skins/:hero`
+`GET /api/skin/:hero`
 
 **Description**:  
 Fetches all skins for a specific hero.
@@ -389,7 +389,7 @@ A JSON array containing all skins for the specified hero.
 
 **Example**:  
 ```plaintext
-GET /api/skins/iron_man?filter=name,quality
+GET /api/skin/iron_man?filter=name,quality
 ```
 
 ---
@@ -724,5 +724,5 @@ Please join our [Discord](https://discord.gg/3kSsWEZpft) for help!
 
 
 ## DISCLAIMER
-> This API is NOT official and NOT endorsed by Marvel Rivals in any way. All names, resources and generally any Marvel Rivals related content belongs to Marvel Rivals.
+> This API is NOT official and NOT endorsed by Marvel Rivals or NetEase in any way. All names, resources and generally any Marvel Rivals related content belongs to Marvel Rivals and NetEase.
 
