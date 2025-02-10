@@ -717,10 +717,13 @@ This API is made available under the **MIT License**. See [LICENSE](LICENSE) for
 
 Feel free to submit any issues or suggestions via the [Issues page](https://github.com/marvelrivals/issues).
 
+---
+
 ## Help
 
 Please join our [Discord](https://discord.gg/3kSsWEZpft) for help! 
 
+---
 
 ## DISCLAIMER
 > This API is NOT official and NOT endorsed by Marvel Rivals or NetEase in any way. All names, resources and generally any Marvel Rivals related content belongs to Marvel Rivals and NetEase.
