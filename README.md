@@ -97,7 +97,7 @@ GET /api/heroes?filter=real_name,description
 Fetches detailed information about a specific hero by name.
 
 **Parameters**:  
-- [`hero`](types\heroes.md) (Path Parameter): The name of the hero (e.g., `Iron_Man`).
+- [`hero`](types/heroes.md) (Path Parameter): The name of the hero (e.g., `Iron_Man`).
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
@@ -118,7 +118,7 @@ GET /api/hero/Iron_Man?filter=real_name,description
 Fetches hero statistics based on the platform (PC or Console).
 
 **Parameters**:  
-- [`platform`](types\platforms.md) (Path Parameter): The platform to get hero stats for.
+- [`platform`](types/platforms.md) (Path Parameter): The platform to get hero stats for.
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
@@ -181,9 +181,9 @@ GET /api/item/30000001?filter=quality,type
 Fetches global or hero-specific leaderboards.
 
 **Parameters**:  
-- [`hero`](types\heroes.md) (Optional Path Parameter): The name of a specific hero to fetch the leaderboard for (e.g., `captain-america`).
+- [`hero`](types/heroes.md) (Optional Path Parameter): The name of a specific hero to fetch the leaderboard for (e.g., `captain-america`).
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
-- [`platform`](types\platforms.md) (Query Parameter): The platform to get hero stats for.
+- [`platform`](types/platforms.md) (Query Parameter): The platform to get hero stats for.
 
 **Response**:  
 A JSON object containing leaderboard data. If a hero name is provided, it returns the leaderboard for that hero.
@@ -380,7 +380,7 @@ GET /api/skins?filter=name,quality
 Fetches all skins for a specific hero.
 
 **Parameters**:  
-- [`hero`](types\heroes.md) (Path Parameter): The name of the hero whose skins are requested (e.g., `iron_man`).
+- [`hero`](types/heroes.md) (Path Parameter): The name of the hero whose skins are requested (e.g., `iron_man`).
 - `filter` (Query Parameter): Lets you choose which results to include. (e.g. `id`, `name`)
 
 **Response**:  
